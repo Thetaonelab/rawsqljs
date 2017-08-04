@@ -1,0 +1,14 @@
+{
+  "name": "rawsqljs-example",
+  "version": "0.0.1",
+  "description": "Sample usage of rawsqljs",
+  "author": "Debajyoti Bhaumik",
+  "license": "MIT",
+  "scripts": {
+    "rawsql": "rawsql",
+    "clean": "rm -rf src/database/js/*.js"
+  },
+  "dependencies": {
+    "rawsqljs": "git+ssh://git@codelab.eyezon.in/experimental/rawsqljs.git"
+  }
+}

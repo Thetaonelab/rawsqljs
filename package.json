@@ -1,0 +1,34 @@
+{
+  "name": "rawsqljs",
+  "version": "0.0.1",
+  "description": "Wrap your sql in js",
+  "main": "cli.js",
+  "author": "Debajyoti Bhaumik",
+  "license": "MIT",
+  "bin": {
+    "rawsql": "./cli.js"
+  },
+  "scripts": {
+    "b": "mkdir build && yarn",
+    "lint": "standard",
+    "f": "standard --fix",
+    "clean": "rm -rf node_modules build"
+  },
+  "dependencies": {
+    "babylon": "^6.15.0",
+    "bluebird": "^3.4.7",
+    "chalk": "^1.1.3",
+    "cli": "^1.0.1",
+    "handlebars": "^4.0.6",
+    "inquirer": "^3.0.6",
+    "json-stringify-safe": "^5.0.1"
+  },
+  "devDependencies": {
+    "antlr4": "^4.6.0",
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "express-session": "^1.15.1",
+    "jest": "^19.0.2",
+    "standard": "^9.0.0"
+  }
+}

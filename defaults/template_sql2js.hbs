@@ -1,0 +1,24 @@
+// This is generated file.
+// Do not edit! as it will be overwritten
+// Generated on {{generatedTime}}
+
+/* eslint-disable camelcase */
+const connection = require('../connection')
+const Promise = require('bluebird')
+
+{{#each parsedArray}}
+const {{this.funcName}} = ({{#each this.params}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}) => {
+  return Promise.using(connection.getConnection(), conn =>
+    conn.queryAsync(`
+      {{indentsql this.sql '      '}}
+    `{{#each this.params}}{{#if @first}}, [ {{/if}}{{this}}{{#unless @last}}, {{/unless}}{{#if @last}} ]{{/if}}{{/each}})
+  )
+}
+
+{{/each}}
+module.exports = {
+  {{#each parsedArray}}
+  {{this.funcName}}{{#unless @last}},{{/unless}}
+  {{/each}}
+}
+/* eslint-enable camelcase */
