@@ -13,7 +13,7 @@ _or_
 
 `npm install --save-dev git+https://github.com/debjyoti-in/rawsqljs.git`
 
-rawsql will copy database connection module if you run
+copy the database connection template file in `<project_root>/database`
 
 ```bash
 $(npm bin)/rawsql --copy
@@ -36,6 +36,15 @@ run
 `npm run rawsql`
 
 It will expect your `.sql` files in `src/database` folder and will write the generated files in the same folder.
+
+## Usage
+
+Now you can execute each sql statement and get a promise by requiring(`require('./database/<sqlfilename>.js)`) corrosponding generated .js file.
+The generated file will expect a database/connection.js file exporting a getConnection function which returns a disposable Bluebird promise. In the default setup we get db connection from connection pool and release automatically using bluebird's Promise.using.
+
+
+**See `example/` folder for example**
+
 
 To override the default behavior add a `rawsql.conf.js` file in your project dir(the same directory where package.json resides).
 e.g.
@@ -75,13 +84,10 @@ See [example/src/database/js/works.js](https://github.com/debjyoti-in/rawsqljs/s
 # TODO
 
   + Configarable logging
-
   + Load sql in a in memory object and return the sql by name.
       This will make the code generation part optional
-
   + Without listing out parameter names just before the sql, which is error prone
       name them along side placeholder. e.g.
-  
   + Indicate query name with `-- name: <query_name>` e.g.
 ```sql
     -- name: records_by_clients
