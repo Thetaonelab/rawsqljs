@@ -9,6 +9,6 @@
     "clean": "rm -rf src/database/js/*.js"
   },
   "dependencies": {
-    "rawsqljs": "git+ssh://git@codelab.eyezon.in/experimental/rawsqljs.git"
+    "rawsqljs": "git+https://github.com/Eyezon/rawsqljs.git"
   }
 }

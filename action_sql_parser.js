@@ -232,9 +232,8 @@ function parseNdActionOnSQL (fileName, sqlStr, queries, errors) {
         typeStack.push(SQL_X)
         break
       case SQL_PARAM:
-        fname += '$' + paramCount // sqlStr[pos++]
+        fname += '$' + (++paramCount) // sqlStr[pos++]
         ++pos
-        ++paramCount
         typeStack.push(SQL_X)
         break
       case SQL_END:
