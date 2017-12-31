@@ -1,3 +1,7 @@
+# rawsqljs
+
+<img src="logo.png" width="150px" alt="logo">
+
 Generate javascript file from sql file, wrapping each sql(ended with a semicolon) in a js function.
 
 ## Description
